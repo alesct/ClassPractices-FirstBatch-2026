@@ -15,7 +15,7 @@ with gr.Blocks() as ui:
         data_table = gr.DataFrame(label="DB 내용")
         refresh_btn = gr.Button("데이터 새로고침")
     
-    # Aquí puedes añadir más funciones de análisis
+
     refresh_btn.click(get_stats, outputs=data_table)
 
 # Gradio 마운트 및 실행
