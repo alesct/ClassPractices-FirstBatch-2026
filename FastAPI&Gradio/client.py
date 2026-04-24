@@ -12,8 +12,7 @@ async def crawl_quotes():
     
     conn = sqlite3.connect("quotes.db")
     cursor = conn.cursor()
-    cursor.execute("DELETE FROM quotes") # Limpiar antes de cargar
-    
+    cursor.execute("DELETE FROM quotes") 
     for item in items:
         text = item.find("span", class_="text").text
         author = item.find("small", class_="author").text
