@@ -1,7 +1,8 @@
 fastapi
 uvicorn
-httpx
+httpx==0.24.1
+httpcore==0.15.0
 beautifulsoup4
 gradio
 pandas
-matplotlib
+deep_translator

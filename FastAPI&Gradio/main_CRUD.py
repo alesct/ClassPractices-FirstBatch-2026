@@ -1,60 +1,55 @@
 from pydantic import BaseModel
+from typing import List
 import sqlite3
 
-# Pydantic 모델 
-class Item(BaseModel):
+class 명언_모델(BaseModel):
     id: int
     text: str
     author: str
     category: str
 
-class ItemCreate(BaseModel):
+class 명언_생성_모델(BaseModel):
     text: str
     author: str
     category: str
 
-# 데이터베이스 함수
-def db_get_all():
+def 명언_추가하기(명언: 명언_생성_모델):
     conn = sqlite3.connect("quotes.db")
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM quotes")
-    rows = cursor.fetchall()
-    conn.close()
-    return rows
-
-# 특정 ID의 명언을 삭제하는 함수
-def db_delete_quote(quote_id: int):
-    conn = sqlite3.connect("quotes.db")
-    cursor = conn.cursor()
-    # 해당 ID가 존재하는지 확인
-    cursor.execute("SELECT * FROM quotes WHERE id = ?", (quote_id,))
-    if cursor.fetchone() is None:
-        conn.close()
-        return False
-    
-    cursor.execute("DELETE FROM quotes WHERE id = ?", (quote_id,))
-    conn.commit()
-    conn.close()
-    return True
-
-# 명언 내용을 수정하는 함수 (Función para actualizar)
-def db_update_quote(quote_id: int, text: str, author: str, category: str):
-    conn = sqlite3.connect("quotes.db")
-    cursor = conn.cursor()
-    
-    # 해당 ID가 있는지 먼저 확인
-    cursor.execute("SELECT * FROM quotes WHERE id = ?", (quote_id,))
-    if cursor.fetchone() is None:
-        conn.close()
-        return False
-    
-    # 데이터 업데이트
     cursor.execute("""
-        UPDATE quotes 
-        SET text = ?, author = ?, category = ? 
-        WHERE id = ?
-    """, (text, author, category, quote_id))
-    
+        INSERT INTO quotes (text, author, category) 
+        VALUES (?, ?, ?)
+    """, (명언.text, 명언.author, 명언.category))
     conn.commit()
     conn.close()
-    return True
+
+def 모든_명언_가져오기():
+    conn = sqlite3.connect("quotes.db")
+    conn.row_factory = sqlite3.Row 
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM quotes ORDER BY id DESC")
+    rows = cursor.fetchall()
+    print(f"★ DB DEBUG: 데이터베이스에 총 {len(rows)}개의 명언이 있습니다.")
+    결과 = [dict(row) for row in rows]
+    conn.close()
+    return 결과
+
+def 명언_삭제하기(명언_id: int):
+    conn = sqlite3.connect("quotes.db")
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM quotes WHERE id = ?", (명언_id,))
+    성공 = cursor.rowcount > 0
+    conn.commit()
+    conn.close()
+    return 성공
+
+def 명언_수정하기(명언_id: int, text: str, author: str, category: str):
+    conn = sqlite3.connect("quotes.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        UPDATE quotes SET text = ?, author = ?, category = ? WHERE id = ?
+    """, (text, author, category, 명언_id))
+    성공 = cursor.rowcount > 0
+    conn.commit()
+    conn.close()
+    return 성공
