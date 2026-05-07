@@ -1,6 +1,7 @@
 # ────────୨ৎ────────
-FastAPI & Gradio: Quotes 프로젝트
-────────୨ৎ────────
+# FastAPI & Gradio: Quotes 프로젝트
+# ────────୨ৎ────────
+
 이 프로젝트는 FastAPI를 백엔드로 사용하고, Gradio를 이용해 사용자에게 친숙한 인터페이스를 제공하는 
 명언 관리 및 조회 애플리케이션입니다.
 
@@ -30,13 +31,13 @@ FastAPI와 Gradio를 설치합니다.
 
 ## 𝟜. 프로젝트 실행을 위한 파일 구성
 
-ᯓ★.  app.py              # Gradio UI 및 FastAPI 통합 메인 실행 파일
-ᯓ★.  client.py           # 클라이언트 요청 테스트 스크립트
-ᯓ★.  main_CRUD.py        # 데이터베이스 생성 및 CRUD 로직
-ᯓ★.  main_server.py      # FastAPI 서버 인스턴스 및 라우팅 설정
-ᯓ★.  quotes.db           # SQLite 데이터베이스 파일
-ᯓ★.  packages.txt        # 시스템 패키지 목록
-ᯓ★.  requirements.txt    # Python 라이브러리 의존성 파일
+### ᯓ★.  app.py              # Gradio UI 및 FastAPI 통합 메인 실행 파일
+### ᯓ★.  client.py           # 클라이언트 요청 테스트 스크립트
+### ᯓ★.  main_CRUD.py        # 데이터베이스 생성 및 CRUD 로직
+### ᯓ★.  main_server.py      # FastAPI 서버 인스턴스 및 라우팅 설정
+### ᯓ★.  quotes.db           # SQLite 데이터베이스 파일
+### ᯓ★.  packages.txt        # 시스템 패키지 목록
+### ᯓ★.  requirements.txt    # Python 라이브러리 의존성 파일
 
 ## 𝟝. 실행 및 배포
 
