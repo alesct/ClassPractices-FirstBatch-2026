@@ -24,20 +24,20 @@ VS Code를 실행하고 프로젝트 폴더를 엽니다.
 가상 환경 활성화:
 ⋆.\venv\Scripts\activate
 
-##𝟛. 필수 라이브러리 설치
+## 𝟛. 필수 라이브러리 설치
 
 FastAPI와 Gradio를 설치합니다.
 ⋆pip install fastapi uvicorn gradio
 
 ## 𝟜. 프로젝트 실행을 위한 파일 구성
 
-### ᯓ★.  app.py              # Gradio UI 및 FastAPI 통합 메인 실행 파일
-### ᯓ★.  client.py           # 클라이언트 요청 테스트 스크립트
-### ᯓ★.  main_CRUD.py        # 데이터베이스 생성 및 CRUD 로직
-### ᯓ★.  main_server.py      # FastAPI 서버 인스턴스 및 라우팅 설정
-### ᯓ★.  quotes.db           # SQLite 데이터베이스 파일
-### ᯓ★.  packages.txt        # 시스템 패키지 목록
-### ᯓ★.  requirements.txt    # Python 라이브러리 의존성 파일
+* ᯓ★.  app.py              # Gradio UI 및 FastAPI 통합 메인 실행 파일
+* ᯓ★.  client.py           # 클라이언트 요청 테스트 스크립트
+* ᯓ★.  main_CRUD.py        # 데이터베이스 생성 및 CRUD 로직
+* ᯓ★.  main_server.py      # FastAPI 서버 인스턴스 및 라우팅 설정
+* ᯓ★.  quotes.db           # SQLite 데이터베이스 파일
+* ᯓ★.  packages.txt        # 시스템 패키지 목록
+* ᯓ★.  requirements.txt    # Python 라이브러리 의존성 파일
 
 ## 𝟝. 실행 및 배포
 
@@ -54,11 +54,11 @@ FastAPI와 Gradio를 설치합니다.
 아래 링크를 통해 실시간으로 시스템을 확인할 수 있습니다.
 
 ### ꩜실시간 데모 보기:
-메인 사용자 인터페이스: [https://alesct1-midterm2555041.hf.space](https://alesct1-midterm2555041.hf.space)
+메인 사용자 인터페이스: [FastAPI & Gradio 서비스 바로가기](https://alesct1-midterm2555041.hf.space)
 
 명언 조회, 단어 수 확인 및 실시간 다국어 번역 기능을 제공합니다.
 
-API 명세서 및 데이터 관리: [https://alesct1-midterm2555041.hf.space/docs](https://alesct1-midterm2555041.hf.space/docs)
+API 명세서 및 데이터 관리: [CRUD 바로가기](https://alesct1-midterm2555041.hf.space/docs)
 
 명언의 생성, 수정, 삭제 등 백엔드 기능을 시각적으로 테스트할 수 있습니다.
 
