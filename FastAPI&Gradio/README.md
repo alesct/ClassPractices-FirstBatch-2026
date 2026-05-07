@@ -54,9 +54,12 @@ FastAPI와 Gradio를 설치합니다.
 아래 링크를 통해 실시간으로 시스템을 확인할 수 있습니다.
 
 ### ꩜실시간 데모 보기:
-메인 사용자 인터페이스: FastAPI & Gradio 서비스 바로가기
+메인 사용자 인터페이스: [https://alesct1-midterm2555041.hf.space](https://alesct1-midterm2555041.hf.space)
+
 명언 조회, 단어 수 확인 및 실시간 다국어 번역 기능을 제공합니다.
-API 명세서 및 데이터 관리: API Documentation (CRUD) 바로가기
+
+API 명세서 및 데이터 관리: [https://alesct1-midterm2555041.hf.space/docs](https://alesct1-midterm2555041.hf.space/docs)
+
 명언의 생성, 수정, 삭제 등 백엔드 기능을 시각적으로 테스트할 수 있습니다.
 
 ## 𝟟. 결론
