@@ -1,0 +1,14 @@
+
+.db
+.sqlite3
+
+__pycache__/
+.pyc
+.pytest_cache/
+.vscode/
+.DS_Store
+
+
+venv/
+.venv/
+env/
